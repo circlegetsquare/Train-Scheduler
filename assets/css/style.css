@@ -1,0 +1,70 @@
+/* Global Styles */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: helvetica;
+}
+
+p {
+  margin: 10px 0px;
+}
+
+button {
+  font-size: 18px;
+}
+
+.wrapper {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.container {
+  border: 1px solid;
+  padding: 10px;
+}
+
+.table {
+  margin-top: 40px;
+  clear: all;
+}
+
+
+.column {
+  float: left;
+  width: 20%;
+  border: 1px solid;
+  border-top:0;
+  padding: 10px;
+}
+
+.table_header {
+  font-weight: 800;
+  background-color: yellow;
+  border: 1px solid;
+  padding-left:10px;
+}
+
+.row {
+  overflow: auto;
+}
+
+.clear {
+  clear: both;
+}
+
+.input-box {
+  border: 0px 1px 1px 1px solid;
+  margin: 10px 0px 30px 0px;
+  font-size: 18px;
+}
+
+.center {
+  text-align: center;
+}
+
+.dollars:before { 
+  content:'$';
+}
