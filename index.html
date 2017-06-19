@@ -15,17 +15,17 @@
     <!-- Fixed navbar -->
     <div class="wrapper">
 
-        <div class="table_header container center">
-          <h2>Train Scheduler</h2>
+        <div class="table_header container center last">
+          <h1>Train Scheduler</h1>
         </div>
 
         <div class="table row container">
-          <div class="row"><h2>Current Employees</h2></div>
+          <div class="row"><h2>Current Train Schedule</h2></div>
           <div class="column table_header">Train Name</div>
           <div class="column table_header">Destination</div>
-          <div class="column table_header">Frequency(min)</div>
+          <div class="column table_header">Frequency (mins)</div>
           <div class="column table_header">Next Arrival</div>
-          <div class="column table_header">Minutes Away</div>
+          <div class="column table_header last">Minutes Away</div>
 
           <div id="train-display" class="clear"></div>
 
@@ -34,16 +34,16 @@
         <div class="table container">
             <div class="row"><h2>Add Train</h2></div>
             
-            <div class="table_header row">Train Name</div>
+            <div class="table_header row last">Train Name</div>
               <div><input class="input-box" id="train-name"></input></div>
             
-            <div class="table_header row">Destination</div>
+            <div class="table_header row last">Destination</div>
               <div><input class="input-box" id="destination"></input></div>
 
-            <div class="table_header row">First Train Time (HH:mm -- military time)</div>
+            <div class="table_header row last">First Train Time (HH:mm -- military time)</div>
               <div><input class="input-box" id="first-train"></input></div>
             
-            <div class="table_header row">Frequency (in minutes)</div>
+            <div class="table_header row last">Frequency (mins)</div>
               <div><input class="input-box" id="frequency"></input></div>
 
             <div class="row">

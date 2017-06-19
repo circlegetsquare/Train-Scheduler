@@ -55,10 +55,11 @@ database.ref().orderByChild('employeeRole').on("child_added", function(snapshot)
       html.append('<div class="column">' + (snapshot.val().destination) + '</div>');
       html.append('<div class="column">' + (snapshot.val().frequency) + '</div>');
       html.append('<div class="column">' + moment(nextArrival).format("hh:mm a") + '</div>');
-      html.append('<div class="column">' + minutesAway + '</div>');
+      html.append('<div class="column last">' + minutesAway + '</div>');
       $("#train-display").append(html);     
       });
-        
+
+    
 
 
   function nextTrainTime (firstTrainTime, frequency) {
@@ -90,4 +91,6 @@ database.ref().orderByChild('employeeRole').on("child_added", function(snapshot)
     nextArrival = moment().add(minutesAway, "minutes");
     console.log("ARRIVAL TIME: " + moment(nextArrival).format("hh:mm"));
   }
+
+  
 

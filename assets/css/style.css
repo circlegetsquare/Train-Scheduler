@@ -16,6 +16,11 @@ button {
   font-size: 18px;
 }
 
+h2 {
+  margin-top: 3px;
+  margin-bottom: 10px;
+}
+
 .wrapper {
   width: 1024px;
   margin: 0 auto;
@@ -23,28 +28,33 @@ button {
 
 .container {
   border: 1px solid;
-  padding: 10px;
+  padding: 7px;
 }
 
 .table {
-  margin-top: 40px;
+  margin-top: 15px;
   clear: all;
 }
-
 
 .column {
   float: left;
   width: 20%;
   border: 1px solid;
   border-top:0;
-  padding: 10px;
+  border-right:0;
+  padding: 7px;
 }
 
 .table_header {
   font-weight: 800;
-  background-color: yellow;
+  background-color: #92d08f;
   border: 1px solid;
-  padding-left:10px;
+  border-right: 0px;
+  padding:7px;
+}
+
+.last {
+  border-right: 1px solid; 
 }
 
 .row {
