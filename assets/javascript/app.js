@@ -22,6 +22,7 @@
   var minutesAway = "";
   var html = "";
   var counter = 0;
+  var isOn = true;
 
 // PUSHES DATA TO DATABASE ON SUBMIT
 $("#submit-button").on("click", function(event) {
@@ -45,6 +46,8 @@ $("#submit-button").on("click", function(event) {
     $("#first-train").val('');
   });
 
+
+
 //UPDATES TABLE ON LOAD AND WHEN CHILD IS ADDED, UPDATES NEXT ARRIVAL AND MINUTES AWAY EVERY 10 SECONDS
 database.ref().orderByChild('employeeRole').on("child_added", function(snapshot) {
 
@@ -65,13 +68,13 @@ database.ref().orderByChild('employeeRole').on("child_added", function(snapshot)
       html.append('<div class="column last" id="minutes-away-' + counter + '">' + minutesAway + '</div>');
       $("#train-display").append(html);
       counter++;
-      setTimeout(update, 1000);
       });
 
-  update();
-    
 
+//CALLS UPDATE EVERY 5 SECONDS
+setInterval(update, 5000);
 
+//TAKES FIRST TRAIN TIME AND FREQUENCY AS ARGUMENTS TO PRODUCE NEXT ARRIVAL TIME AND MINUTES AWAY
   function nextTrainTime(firstTrainTime, frequency) {
 
     // First Time (pushed back 1 year to make sure it comes before current time)
@@ -93,15 +96,13 @@ database.ref().orderByChild('employeeRole').on("child_added", function(snapshot)
     nextArrival = moment().add(minutesAway, "minutes");
   }
 
+//UPDATES SCREEN WITH NEXT ARRIVAL TIME AND MINUTES AWAY FOR EACH TRAIN -- BASED ON LOCAL TIME
   function update() {
     for (var i = 0; i < counter; i++) {
-      //console.log('update:' + firstTrainTimeArray[i]);
-      //console.log('update' + frequencyArray[i]);
       nextTrainTime(firstTrainTimeArray[i], frequencyArray[i]);
       $('#next-arrival-' + i).html(moment(nextArrival).format("hh:mm a"));
-      $('#minutes-away-' + i).html(minutesAway);
-      setTimeout(update, 1000);
-      
-        }    
-  }
+      $('#minutes-away-' + i).html(minutesAway);      
+        };
+  };
+
 
